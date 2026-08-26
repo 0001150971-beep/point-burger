@@ -71,21 +71,6 @@ a {
 /* detalhes vermelhos */
 
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 400px;
-    height: 400px;
-
-    border: 1px solid rgba(229, 9, 20, 0.18);
-    border-radius: 50%;
-
-    left: -220px;
-    bottom: -200px;
-}
-
 
 .hero-content {
     position: relative;
