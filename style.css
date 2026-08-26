@@ -1,0 +1,944 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   VARIÁVEIS
+========================================= */
+
+:root {
+    --black: #050505;
+    --black-soft: #0d0d0d;
+    --black-card: #111111;
+
+    --red: #e50914;
+    --red-dark: #a90009;
+
+    --white: #ffffff;
+    --gray: #a7a7a7;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(229, 9, 20, 0.18),
+            transparent 40%
+        ),
+        #050505;
+
+    overflow: hidden;
+}
+
+
+/* detalhes vermelhos */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(229, 9, 20, 0.25);
+    border-radius: 50%;
+
+    right: -250px;
+    top: -200px;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid rgba(229, 9, 20, 0.18);
+    border-radius: 50%;
+
+    left: -220px;
+    bottom: -200px;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    width: min(300px, 70vw);
+
+    display: block;
+
+    margin: 0 auto 35px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(229, 9, 20, 0.25));
+}
+
+
+/* =========================================
+   HERO TEXTO
+========================================= */
+
+.subtitle {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(35px, 6vw, 65px);
+
+    line-height: 0.95;
+
+    letter-spacing: 1px;
+}
+
+.subtitle span {
+    color: var(--red);
+}
+
+
+.description {
+    color: var(--gray);
+
+    max-width: 500px;
+
+    margin: 25px auto 35px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BOTÃO PRINCIPAL
+========================================= */
+
+.main-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    background: var(--red);
+
+    padding: 18px 30px;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    border: 1px solid var(--red);
+
+    transition: 0.3s;
+}
+
+.main-button span {
+    font-size: 20px;
+}
+
+.main-button:hover {
+    background: transparent;
+
+    color: var(--red);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.scroll-indicator span {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   ACESSO RÁPIDO
+========================================= */
+
+.quick-access {
+    padding: 110px 7%;
+
+    background: var(--black-soft);
+}
+
+
+.section-title span {
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 0.95;
+
+    margin-top: 12px;
+}
+
+.section-title strong {
+    color: var(--red);
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.buttons-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    max-width: 1200px;
+
+    margin: 55px auto 0;
+}
+
+
+.access-card {
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 30px;
+
+    background: var(--black-card);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+
+.access-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid rgba(229, 9, 20, 0.35);
+
+    border-radius: 50%;
+
+    right: -50px;
+    top: -50px;
+
+    transition: 0.4s;
+}
+
+
+.access-card:hover {
+    border-color: var(--red);
+
+    transform: translateY(-8px);
+}
+
+.access-card:hover::before {
+    transform: scale(2);
+}
+
+
+.card-icon {
+    font-size: 28px;
+
+    margin-bottom: 35px;
+}
+
+
+.card-text small {
+    color: var(--red);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.card-text h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 40px;
+
+    line-height: 0.9;
+
+    margin: 10px 0;
+}
+
+
+.card-text p {
+    color: var(--gray);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.arrow {
+    position: absolute;
+
+    bottom: 25px;
+    right: 30px;
+
+    font-size: 25px;
+
+    color: var(--red);
+
+    transition: 0.3s;
+}
+
+
+.access-card:hover .arrow {
+    transform: translateX(7px);
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+.about {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+}
+
+
+.about-image {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+}
+
+.about-image img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.55);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.1)
+        );
+}
+
+.image-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.image-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.image-content span {
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.image-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.9;
+
+    margin-top: 10px;
+}
+
+
+.image-content strong {
+    color: var(--red);
+}
+
+
+.about-text {
+    padding: 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #0c0c0c;
+}
+
+
+.red-title {
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.about-text h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(50px, 6vw, 75px);
+
+    line-height: 0.9;
+
+    margin: 15px 0 30px;
+}
+
+
+.about-text h2 strong {
+    color: var(--red);
+}
+
+
+.about-text p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+
+    margin-bottom: 15px;
+}
+
+
+.highlight {
+    margin-top: 20px;
+
+    color: var(--red);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.highlight span {
+    font-size: 20px;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   CATEGORIAS
+========================================= */
+
+.categories {
+    padding: 110px 7%;
+
+    background: var(--black);
+}
+
+
+.center {
+    text-align: center;
+}
+
+
+.category-grid {
+    max-width: 1000px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.category {
+    text-align: center;
+
+    padding: 35px 15px;
+
+    border: 1px solid var(--border);
+
+    background: #0b0b0b;
+
+    transition: 0.3s;
+}
+
+
+.category:hover {
+    border-color: var(--red);
+
+    transform: translateY(-5px);
+}
+
+
+.category-icon {
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+
+.category h3 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 27px;
+}
+
+
+.category p {
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   CTA FINAL
+========================================= */
+
+.final-cta {
+    position: relative;
+
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(229, 9, 20, 0.22),
+            transparent 50%
+        ),
+        #080808;
+
+    overflow: hidden;
+}
+
+
+.final-cta::before,
+.final-cta::after {
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(229, 9, 20, 0.25);
+
+    border-radius: 50%;
+}
+
+
+.final-cta::before {
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    top: -200px;
+}
+
+
+.final-cta::after {
+    width: 400px;
+    height: 400px;
+
+    right: -200px;
+    bottom: -200px;
+}
+
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.cta-content > span {
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.cta-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    line-height: 0.9;
+
+    margin: 15px 0 20px;
+}
+
+
+.cta-content h2 strong {
+    color: var(--red);
+}
+
+
+.cta-content p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 60px 20px 30px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.footer-logo {
+    width: 150px;
+
+    margin-bottom: 15px;
+}
+
+
+footer > p {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+.footer-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin: 30px 0;
+
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+.footer-links a {
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+
+.copyright {
+    color: #444;
+
+    font-size: 9px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .buttons-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .access-card {
+        min-height: 200px;
+    }
+
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-image {
+        min-height: 450px;
+    }
+
+
+    .about-text {
+        padding: 70px 8%;
+    }
+
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 100svh;
+    }
+
+
+    .hero-content {
+        padding: 40px 20px 70px;
+    }
+
+
+    .logo {
+        width: 220px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .description {
+        font-size: 12px;
+
+        max-width: 320px;
+    }
+
+
+    .main-button {
+        width: 100%;
+
+        max-width: 300px;
+
+        padding: 17px 20px;
+    }
+
+
+    .quick-access,
+    .categories {
+        padding: 80px 6%;
+    }
+
+
+    .section-title h2 {
+        font-size: 48px;
+    }
+
+
+    .access-card {
+        min-height: 210px;
+
+        padding: 25px;
+    }
+
+
+    .card-text h3 {
+        font-size: 36px;
+    }
+
+
+    .about-image {
+        min-height: 400px;
+
+        padding: 35px;
+    }
+
+
+    .about-text {
+        padding: 65px 8%;
+    }
+
+
+    .category-grid {
+        gap: 10px;
+    }
+
+
+    .category {
+        padding: 25px 10px;
+    }
+
+
+    .category-icon {
+        font-size: 32px;
+    }
+
+
+    .category h3 {
+        font-size: 23px;
+    }
+
+
+    .footer-info {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .footer-links {
+        gap: 15px;
+    }
+
+}
